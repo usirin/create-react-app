@@ -161,7 +161,7 @@ module.exports = function(webpackEnv) {
       // these are required for Application Launcher to know that the necessary
       // setup function for each app will leave under a namespace with this
       // name.
-      library: appName,
+      library: ['__SAMBATV_APPLICATIONS__', appName],
       libraryTarget: 'window',
       // Point sourcemap entries to original disk location (format as URL on Windows)
       devtoolModuleFilenameTemplate: isEnvProduction
