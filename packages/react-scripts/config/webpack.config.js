@@ -49,6 +49,8 @@ const useTypeScript = fs.existsSync(paths.appTsConfig);
 // Read the appName from package.json
 const { name: appName } = require(paths.appPackageJson);
 
+const useSambaPlatform = fs.existsSync(paths.appIndexPlatformJs);
+
 // style files regexes
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
@@ -136,8 +138,18 @@ module.exports = function(webpackEnv) {
     entry: [
       isEnvDevelopment &&
         require.resolve('react-dev-utils/webpackHotDevClient'),
-      // Finally, this is your app's code:
-      isEnvDevelopment ? paths.appIndexJs : paths.appIndexPlatformJs,
+      // in development
+      //  - use index.js
+      // in production
+      //  - if index.platform.js exists
+      //    - use index.platform.js
+      //  - else
+      //    - use index.js
+      isEnvDevelopment
+        ? paths.appIndexJs
+        : useSambaPlatform
+        ? paths.appIndexPlatformJs
+        : paths.appIndexJs,
     ].filter(Boolean),
     output: {
       // The build folder.
