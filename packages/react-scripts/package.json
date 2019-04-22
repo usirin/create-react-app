@@ -1,18 +1,15 @@
 {
-  "name": "react-scripts",
-  "version": "2.1.8",
-  "description": "Configuration and scripts for Create React App.",
+  "name": "sambatv-react-scripts",
+  "version": "2.1.8-samba.1",
+  "description": "Samba.tv configuration and scripts for Create React App.",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/facebook/create-react-app.git",
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:sambatv/create-react-app.git",
     "directory": "packages/react-scripts"
   },
   "license": "MIT",
   "engines": {
     "node": ">=8.10"
-  },
-  "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
   },
   "files": [
     "bin",
@@ -86,11 +83,7 @@
     "fsevents": "1.2.7"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
