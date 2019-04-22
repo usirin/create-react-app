@@ -129,8 +129,6 @@ const reactScriptsLinked =
   fs.existsSync(reactScriptsPath) &&
   fs.lstatSync(reactScriptsPath).isSymbolicLink();
 
-console.log(resolveModule(resolveOwn, 'template/src/index.platform'));
-
 // config before publish: we're in ./packages/react-scripts/config/
 if (
   !reactScriptsLinked &&
