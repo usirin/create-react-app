@@ -316,7 +316,10 @@ module.exports = function(webpackEnv) {
                 eslintPath: require.resolve('eslint'),
                 // @remove-on-eject-begin
                 baseConfig: {
-                  extends: [require.resolve('eslint-config-sambatv')],
+                  extends: [
+                    require.resolve('eslint-config-sambatv'),
+                    require.resolve('eslint-config-sambatv/react'),
+                  ],
                 },
                 ignore: true,
                 useEslintrc: true,
