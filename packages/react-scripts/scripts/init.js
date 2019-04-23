@@ -103,7 +103,7 @@ module.exports = function(
 
   // Setup the eslint config
   appPackage.eslintConfig = {
-    extends: 'sambatv',
+    extends: ['sambatv', 'sambatv/react'],
   };
 
   // Setup the browsers list
